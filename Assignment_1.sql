@@ -1,0 +1,36 @@
+CREATE DATABASE EDUCATION_CENTER;
+
+USE EDUCATION_CENTER;
+
+CREATE TABLE STUDENT_TABLE(
+StudentID INT PRIMARY KEY,
+FirstName VARCHAR(100),
+LastName VARCHAR (100),
+Age INT CHECK (Age>=18),
+Email VARCHAR (255) UNIQUE NOT NULL
+);
+
+INSERT INTO STUDENT_TABLE (StudentID,FirstName,LastName,Age,Email)
+VALUE 
+(001,'Tracy','Njuguna',21,'tracynjuguna@gmail.com'),
+(002,'Agnes','Kibunja',20,'agneskibunja@yahoo.com'),
+(003,'Brian','Onjula',25,'brianonjuala@gmail.com'),
+(004,'Ted','Wanja',30,'tedwanja@yahoo.com');
+
+SELECT * FROM STUDENT_TABLE;
+
+ALTER TABLE STUDENT_TABLE
+ADD EnrolmentDate DATE;
+
+SELECT * FROM STUDENT_TABLE;
+
+ALTER TABLE STUDENT_TABLE
+MODIFY Email VARCHAR (300);
+
+SELECT * FROM STUDENT_TABLE;
+
+ALTER TABLE STUDENT_TABLE
+DROP COLUMN LastName ;
+
+SELECT * FROM STUDENT_TABLE
+
